@@ -145,77 +145,68 @@
     
 
 
-    <section class="">
-        <!-- kotak Coklat -->
-        </section>
-        <section class='py-10'>
-            <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-2xl md:text-4xl font-poppins font-semibold uppercase">Real-Time Emission</h2>
-                <h2 class="text-2xl md:text-4xl font-poppins font-semibold mb-5 uppercase">Monitoring</h2>
-                <h1 class="p-3 text-dark font-semibold tracking-widest uppercase">Nyalakan Lokasi mu sekarang!</h1>
-        
-                <div class="p-1 m-3 flex flex-col w-full rounded-2xl mx-auto items-center justify-center">
-                    <h2 class="text-xl font-poppins font-semibold"><i class="fa-solid fa-location-dot"></i> Your location now:
-                    </h2>
-                    <h2 class="text-blue-600" id="location"></h2>
-                </div>
-        
-                <div id="loading" style="display:none;">
-                    Loading...
-                </div>
-        
-                <div class="mb-4">
-                    <input type="text" id="cityInput" class="border rounded-lg p-2" placeholder="Masukkan nama kota...">
-                    <button onclick="fetchWeatherData()" class="bg-blue-500 text-white rounded-lg p-2">Cari Cuaca</button>
-                </div>
-        
-                <div id="weather-data" style="display:none;">
-                    <div class="bg-white rounded-xl shadow-xl p-8">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-1 justify-center">
-                            <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Temperature</h3>
-                                <div class="flex justify-center mb-4">
-                                    <div class="p-2 rounded-full">
-                                        <img src="assets/suhu.svg" alt="" class="w-16 h-16">
-                                    </div>
-                                </div>
-                                <span id="temperature" class="mb-2"></span>°C
-                            </div>
-        
-                            <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">CO (Carbon Monoxide)</h3>
-                                <div class="flex justify-center mb-4">
-                                    <div class="p-2 rounded-full">
-                                        <img src="assets/co.svg" alt="" class="w-16 h-16">
-                                    </div>
-                                </div>
-                                <span id="co" class="mb-2"></span> μg/m³
-                            </div>
-        
-                            <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">O3 (Ozone)</h3>
-                                <div class="flex justify-center mb-4">
-                                    <div class="p-2 rounded-full">
-                                        <img src="assets/03.svg" alt="" class="w-16 h-16">
-                                    </div>
-                                </div>
-                                <span id="o3" class="mb-2"></span> μg/m³
-                            </div>
-        
-                            <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">EPA Index (US)</h3>
-                                <div class="flex justify-center mb-4">
-                                    <div class="p-2 rounded-full">
-                                        <img src="assets/index-USA.svg" alt="" class="w-16 h-16">
-                                    </div>
-                                </div>
-                                <span id="epa-index" class="mb-2"></span> / 6
+    <section class='py-10'>
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-2xl md:text-4xl font-poppins font-semibold uppercase">Real-Time Emission</h2>
+            <h2 class="text-2xl md:text-4xl font-poppins font-semibold mb-5 uppercase">Monitoring</h2>
+            <h1 class="p-3 text-dark font-semibold tracking-widest uppercase">Nyalakan Lokasi mu sekarang!</h1>
+    
+            <div class="p-1 m-3 flex flex-col w-full rounded-2xl mx-auto items-center justify-center">
+                <h2 class="text-xl font-poppins font-semibold">
+                    <i class="fa-solid fa-location-dot"></i> Your location now:
+                </h2>
+                <h2 class="text-blue-600">Jakarta, Indonesia</h2>
+            </div>
+    
+            <!-- <div class="mb-4">
+                <input type="text" class="border rounded-lg p-2" placeholder="Masukkan nama kota...">
+                <button class="bg-blue-500 text-white rounded-lg p-2">Cari Cuaca</button>
+            </div> -->
+    
+            <div class="bg-white rounded-xl shadow-xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-1 justify-center">
+                    <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Temperature</h3>
+                        <div class="flex justify-center mb-4">
+                            <div class="p-2 rounded-full">
+                                <img src="assets/suhu.svg" alt="" class="w-16 h-16">
                             </div>
                         </div>
+                        <span>27</span>°C
+                    </div>
+    
+                    <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">CO (Carbon Monoxide)</h3>
+                        <div class="flex justify-center mb-4">
+                            <div class="p-2 rounded-full">
+                                <img src="assets/co.svg" alt="" class="w-16 h-16">
+                            </div>
+                        </div>
+                        <span>0.5</span> μg/m³
+                    </div>
+    
+                    <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">O3 (Ozone)</h3>
+                        <div class="flex justify-center mb-4">
+                            <div class="p-2 rounded-full">
+                                <img src="assets/03.svg" alt="" class="w-16 h-16">
+                            </div>
+                        </div>
+                        <span>10</span> μg/m³
+                    </div>
+    
+                    <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">EPA Index (US)</h3>
+                        <div class="flex justify-center mb-4">
+                            <div class="p-2 rounded-full">
+                                <img src="assets/index-USA.svg" alt="" class="w-16 h-16">
+                            </div>
+                        </div>
+                        <span>2</span> / 6
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
 
     <section class="py-10">
