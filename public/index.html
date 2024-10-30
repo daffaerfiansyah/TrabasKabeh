@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://kit.fontawesome.com/3a3d825e01.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <nav id="navbar" class="sticky-nav fixed top-0 left-0 right-0 z-20 flex justify-between items-center px-6 text-white transition-colors duration-300">
+        <div id="logo" class="flex items-center space-x-4 ml-2">
+            <!-- Logo -->
+            <a href="#" class="p-3 text-3xl font-bold font-poppins">EcoBalance</a>
+        </div>
+    
+        <!-- Links Container -->
+        <div id="nav-links" class="hidden md:flex space-x-8 text-xl font-semibold mr-12">
+            <a href="#home" class="hover:text-blue-600">Home</a>
+            <a href="#content" class="hover:text-blue-600">Content</a>
+            <a href="#fitur" class="hover:text-blue-600">Feature</a>
+            <a href="#about" class="hover:text-blue-600">About</a>
+        </div>
+    
+        <!-- Toggle Button for Mobile -->
+        <div id="toggle-button" class="md:hidden absolute right-6 cursor-pointer text-white">
+            <i class="fa-solid fa-bars fa-lg" style="color: black;"></i>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 text-white flex flex-col items-center justify-center space-y-8 hidden md:hidden z-10">
+        <a href="#home" class="text-2xl hover:text-blue-600">Home</a>
+        <a href="#content" class="text-2xl hover:text-blue-600">Content</a>
+        <a href="#fitur" class="text-2xl hover:text-blue-600">Feature</a>
+        <a href="#about" class="text-2xl hover:text-blue-600">About</a>
+    </div>
+    <!-- Video Banner -->
+    <section class="home relative w-full flex justify-center flex-col px-6 md:px-20 xl:py-72 py-32 overflow-hidden" id="home">
+        <video class="video-slide h-auto w-full z-0 absolute top-0 left-0 object-cover max-h-screen" src="./assets/Video/BannerVideo.mp4" autoplay muted loop></video>
+        <div class="content z-10 w-full md:w-3/4 mt-10 text-center md:text-left">
+            <h1 class="p-1 font-montserat text-white font-bold text-4xl md:text-7xl"><span class="typedText"></span></h1>
+            <h2 class="p-1 font-montserat text-white font-bold text-2xl md:text-6xl">For Future</h2>
+        </div>
+    </section>
+    
+    <div class="max-w-full flex flex-col md:flex-row mb-12 xl:my-1 justify-center items-center" id="content"> 
+        <div class="w-full md:w-1/2 mx-5 md:mx-20 mt-6 md:mt-5 flex items-center justify-center"> 
+            <h1 class="headline-1 p-5 text-3xl md:text-5xl font-poppins font-bold text-center md:text-left">Why<br><span class="mt-4 block">Renewable Energy?</span></h1> 
+        </div>
+        <div class="w-full md:w-1/2 mx-5 md:mx-20">
+            <h1 class="headline-2 px-3 text-xl md:text-2xl xl:text-4xl md:mt-5 font-poppins font-bold text-center md:text-left">Apa itu Renewable Energy?</h1>
+            <p class="headline-1 px-3 py-1 text-sm md:text-md xl:text-xl text-center md:text-justify">Renewable Energy adalah  sumber energi yang diperoleh dari alam yang dapat diperbarui secara alami dalam jangka waktu yang relatif singkat. energi terbarukan adalah sumber energi yang dapat diperbaharui dengan cepat dan tidak merusak lingkungan.</p>
+        </div>
+    </div>
+
+    <div class="banner max-w-full px-4 md:px-10 py-3">
+        <div class="project-box relative rounded-xl overflow-hidden shadow-md">
+            <img src="./assets/Renew.jpg" class="w-full h-40 sm:h-64 md:h-72 lg:h-80 object-cover" alt="Banner Image">
+            <div class="p-7 absolute inset-0 flex items-center text-left bg-black bg-opacity-40">
+                <h1 class="text-white text-4xl md:text-6xl font-poppins font-bold">Sustainable Power<br>Bright Future</h1>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="max-w-full flex flex-wrap xl:flex-nowrap my-5 container-1">
+        <div class="p-10 w-full xl:w-1/2 image-container">
+            <img src="./assets/Climate.jpg" class="rounded-xl shadow-md" alt="">
+        </div>
+        <div class="p-10 w-full xl:w-1/2 flex flex-col justify-center items-center text-center">
+            <h1 class="text-container text-4xl font-semibold font-poppins">Climate-Smart Agriculture <br>and Forestry</h1>
+            <p class="font-poppins text-lg p-5 text-justify">Sektor pertanian dan kehutanan memiliki potensi besar untuk mengurangi dampak perubahan iklim melalui teknologi hijau. <br><span class="font-semibold">Pertanian Vertikal dan Hidroponik : </span>Teknologi ini memungkinkan tanaman ditanam di lingkungan yang terkendali, seperti gedung bertingkat, dengan menggunakan lebih sedikit air dan lahan. <br><span class="font-semibold">Restorasi Hutan dan Reboisasi :</span> Teknologi pemetaan dan drone digunakan untuk mengidentifikasi lahan yang cocok untuk penanaman kembali hutan.</p>
+        </div>
+    </div>
+    
+    <div class="max-w-full flex flex-wrap xl:flex-nowrap container-2">
+        <div class="p-10 w-full xl:w-1/2 flex flex-col justify-center items-center text-center">
+            <h1 class="text-4xl font-semibold font-poppins">ZeroRide Transportation</h1>
+            <p class="font-poppins text-lg p-5 text-justify">Teknologi hijau di sektor ini berfokus pada kendaraan listrik dan transportasi berbasis energi terbarukan. Tujuannya, untuk mencapai ketahanan iklim jangka panjang sekaligus mewujudkan konsep pembangunan ekonomi hijau (green economy development). Menggunakan baterai yang dapat diisi ulang sebagai sumber daya, bukan bahan bakar fosil, dalam upaya mengurangi emisi karbon yang berkontribusi pada perubahan iklim.</p>
+        </div>
+        <div class="p-10 w-full xl:w-1/2">
+            <img src="./assets/Listrik.jpg" class="rounded-xl shadow-md" alt="">
+        </div>
+    </div>
+    
+
+    <header>
+        <div class="head-fitur max-w-full p-5 my-5 flex flex-col justify-center items-center text-center" id="fitur">
+            <h1 class="p-1 text-3xl xl:text-3xl font-poppins font-semibold">Standard Quality Air</h1>
+            <h1 class="p-2 text-md xl:text-xl font-poppins">Klik untuk mengetahui standar kualitas</h1>
+        </div>
+    </header>
+    
+    <!-- Button Section -->
+    <div class="circle-button max-w-full mb-5" >
+        <div class="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 xl:gap-16">
+            <div class="text-center text-2xl">
+                <button onclick="showDescription(0),showHeadline(0),showDescription2(0)" class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full border-2 shadow-md hover:border-blue-300 text-4xl sm:text-5xl md:text-6xl xl:text-6xl focus:border-blue-500 active:border-blue-500">
+                    <i class="fa-solid fa-temperature-three-quarters"></i>
+                </button>
+                <p class="w-full p-2 text-lg sm:text-xl md:text-2xl xl:text-2xl font-poppins">Temperature</p>
+            </div>
+            <div class="text-center">
+                <button onclick="showDescription(1),showHeadline(1),showDescription2(1)" class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full border-2 shadow-md hover:border-blue-300 text-4xl sm:text-5xl md:text-6xl xl:text-6xl focus:border-blue-500 active:border-blue-500">
+                    <i class="fa-solid fa-cloud"></i>
+                </button>
+                <p class="w-full p-2 text-lg sm:text-xl md:text-2xl xl:text-2xl font-poppins">CO2</p>
+            </div>
+            <div class="text-center">
+                <button onclick="showDescription(2),showHeadline(2),showDescription2(2)" class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full border-2 shadow-md hover:border-blue-300 text-4xl sm:text-5xl md:text-6xl xl:text-6xl focus:border-blue-500 active:border-blue-500">
+                    <i class="fa-solid fa-droplet"></i>
+                </button>
+                <p class="w-full p-2 text-lg sm:text-xl md:text-2xl xl:text-2xl font-poppins">Humidity</p>
+            </div>
+            <div class="text-center">
+                <button onclick="showDescription(3),showHeadline(3),showDescription2(3)" class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full border-2 shadow-md hover:border-blue-300 text-4xl sm:text-5xl md:text-6xl xl:text-6xl focus:border-blue-500 active:border-blue-500">
+                    <i class="fa-solid fa-dna"></i>
+                </button>
+                <p class="w-full p-2 text-lg sm:text-xl md:text-2xl xl:text-2xl font-poppins">PM2.5</p>
+            </div>
+        </div>
+    
+        <!-- Description Section -->
+        <div class="max-w-full mt-6 sm:mt-8 md:mt-10 items-center text-center p-5 sm:p-5 flex flex-col">
+            <h1 id="head-description" class="font-bold font-poppins"></h1>
+            <p id="description-text" class="font-poppins"></p>
+            <p id="description-text2" class="font-poppins"></p>
+        </div>
+    </div>
+    
+    
+
+
+    <section class="">
+        <!-- kotak Coklat -->
+    </section>
+    <section class='py-10'>
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-2xl md:text-4xl font-poppins font-semibold uppercase">Real-Time Emission</h2>
+            <h2 class="text-2xl md:text-4xl font-poppins font-semibold mb-5 uppercase">Monitoring</h2>
+            <h1 class="p-3 text-dark font-semibold tracking-widest uppercase">Nyalakan Lokasi mu sekarang!</h1>
+    
+            <div class="p-1 m-3 flex flex-col w-full rounded-2xl mx-auto items-center justify-center">
+                <h2 class="text-xl font-poppins font-semibold"><i class="fa-solid fa-location-dot"></i> Your location now:
+                </h2>
+                <h2 class="text-blue-600" id="location"></h2>
+            </div>
+    
+            <div id="loading" style="display:none;">
+                Loading...
+            </div>
+    
+            <div class="mb-4">
+                <input type="text" id="cityInput" class="border rounded-lg p-2" placeholder="Masukkan nama kota...">
+                <button onclick="fetchWeatherData()" class="bg-blue-500 text-white rounded-lg p-2">Cari Cuaca</button>
+            </div>
+    
+            <div id="weather-data" style="display:none;">
+                <div class="bg-white rounded-xl shadow-xl p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-1 justify-center">
+                        <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Temperature</h3>
+                            <div class="flex justify-center mb-4">
+                                <div class="p-2 rounded-full">
+                                    <img src="assets/suhu.svg" alt="" class="w-16 h-16">
+                                </div>
+                            </div>
+                            <span id="temperature" class="mb-2"></span>°C
+                        </div>
+    
+                        <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">CO (Carbon Monoxide)</h3>
+                            <div class="flex justify-center mb-4">
+                                <div class="p-2 rounded-full">
+                                    <img src="assets/co.svg" alt="" class="w-16 h-16">
+                                </div>
+                            </div>
+                            <span id="co" class="mb-2"></span> μg/m³
+                        </div>
+    
+                        <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">O3 (Ozone)</h3>
+                            <div class="flex justify-center mb-4">
+                                <div class="p-2 rounded-full">
+                                    <img src="assets/03.svg" alt="" class="w-16 h-16">
+                                </div>
+                            </div>
+                            <span id="o3" class="mb-2"></span> μg/m³
+                        </div>
+    
+                        <div class="wave-bg p-4 shadow-xl border-2" style="width: 300px; height: 200px; margin: auto;">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">EPA Index (US)</h3>
+                            <div class="flex justify-center mb-4">
+                                <div class="p-2 rounded-full">
+                                    <img src="assets/index-USA.svg" alt="" class="w-16 h-16">
+                                </div>
+                            </div>
+                            <span id="epa-index" class="mb-2"></span> / 6
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <header>
+                <div class="max-w-full p-5 my-5 flex flex-col justify-center items-center text-center">
+                    <h1 class="p-1 text-3xl xl:text-4xl font-poppins font-semibold">Daily Article</h1>
+                </div>
+            </header>
+            <div class=" container mx-auto px-4">
+                <div class="owl-carousel owl-theme">
+                    <!-- Event Card 1 -->
+                    <div class="bg-gray-300 rounded-3xl shadow-lg overflow-hidden p-16 w-full max-w-full mx-auto">
+                        <div class="grid md:grid-cols-2">
+                            <div class="md:p-8 lg:p-12">
+                                <div class="block md:hidden mb-4">
+                                    <img class="h-20 rounded-xl" src="./assets/Tree.jpg" alt="">
+                                </div>
+
+                                <h2 class="items-start lg:text-2xl font-bold">Gawat! Studi Terbaru Ungkap Pohon Hampir Tidak Lagi Menyerap Karbon</h2>
+                                <h4 class="mt-4 md:text-md">Pohon menyerap karbon dioksida untuk kemudian dilepaskan sebagai oksigen. Lantas, bagaimana jika pohon tak lagi menyerap karbon?</h4>
+                                <a href="#" class="text-blue-600 hover:text-blue-800" >Selengkapnya</a>
+                            </div>
+                            <div class="hidden md:block mt-12">
+                                <img src="./assets/Tree.jpg" class="rounded-xl shadow-lg" alt="">
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-4 space-x-2">
+                            <div class="indicator bg-white w-96 h-2 rounded-full border"></div>
+                            <div class="indicator bg-gray-300 w-96 h-2 rounded-full"></div>
+                            <div class="indicator bg-gray-300 w-96 h-2 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Event Card 2 -->
+                    <div class="bg-gray-300 rounded-3xl shadow-lg overflow-hidden p-12 w-full max-w-full mx-auto">
+                        <div class="grid md:grid-cols-2">
+                            <div class="block md:hidden mb-4">
+                                <img class="h-20 rounded-xl" src="./assets/Sustainable.jpeg" alt="">
+                            </div>
+
+                            <div class="md:p-8 lg:p-12">
+                                <h2 class="items-start lg:text-2xl font-bold">Pertamina dan Airbus Jajaki Kerja Sama Pengembangan Sustainable Aviation Fuel di Indonesia.</h2>
+                                <h4 class="mt-4 md:text-sm">Konsisten dalam mengembangkan bisnis energi hijau, PT Pertamina (Persero) membangun kerja sama dengan Airbus untuk menjajaki peluang pengembangan ekosistem bahan bakar penerbangan berkelanjutan atau Sustainable Aviation Fuel (SAF) di Indonesia.</h4>
+                                <a href="#" class="text-blue-600 hover:text-blue-800">Selengkapnya</a>
+                            </div>
+                            <div class="hidden md:block mt-12">
+                                <img src="./assets/Sustainable.jpeg" class="rounded-xl" alt="">
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-4 space-x-2">
+                            <div class="indicator bg-gray-300 w-96 h-2 rounded-full"></div>
+                            <div class="indicator bg-white w-96 h-2 rounded-full border"></div>
+                            <div class="indicator bg-gray-300 w-96 h-2 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Event Card 3 -->
+                    <div class="bg-gray-300 rounded-3xl shadow-lg overflow-hidden p-16 w-full max-w-full mx-auto">
+                        <div class="grid md:grid-cols-2">
+                            <div class="block md:hidden mb-4">
+                                <img class="h-20 rounded-xl" src="./assets/Electric.jpg" alt="">
+                            </div>
+
+                            <div class="md:p-8 lg:p-12">
+                                <h2 class="items-start lg:text-2xl font-bold">Transformasi Energi Listrik: Peran Energi Terbarukan dalam Mengurangi Emisi Karbon.</h2>
+                                <h4 class="mt-4 md:text-sm">Transformasi energi listrik melalui pemanfaatan energi terbarukan merupakan langkah krusial dalam mengurangi emisi karbon global dan memitigasi dampak perubahan iklim.</h4>
+                                <a href="#" class="text-blue-600 hover:text-blue-800">Selengkapnya</a>
+                            </div>
+                            <div class="hidden md:block mt-12">
+                                <img src="./assets/Electric.jpg" class="rounded-xl shadow-xl" alt="">
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-4 space-x-2">
+                            <div class="indicator bg-gray-300 w-96 h-2 rounded-full"></div>
+                            <div class="indicator bg-gray-300 w-96 h-2 rounded-full border"></div>
+                            <div class="indicator bg-white w-96 h-2 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="y-10" id="about">
+        <header class="p-5 flex items-center justify-center">
+            <h1 class="text-4xl font-poppins font-semibold">About Us</h1>
+        </header>
+        <div class="grid md:grid-cols-3 pt-20">
+            <div class="mb-4 items-center justify-center text-center">
+                <div class="rounded-3xl shadow-xl p-5 overflow-hidden w-3/4 border border-slate-400 sm:text-center max-w-full mx-auto">
+                    <img src="./assets/BayuProfil.png" alt="Deskripsi Gambar" class="w-full h-auto rounded-lg object-cover">
+                </div>                
+                <h1 class="px-10 pt-3  md:items-start font-bold">Bayu Ariyo Vonda Wicaksono</h1>
+                <h3 class="px-10 items-center md:items-start">UI/UX Designer</h3>
+            </div>
+            <div class="mb-4 items-center justify-center text-center">
+                <div class="rounded-3xl shadow-xl p-5 overflow-hidden w-3/4 border border-slate-400 sm:text-center max-w-full mx-auto">
+                    <img src="./assets/DaffaProfil.png" alt="Deskripsi Gambar" class="w-full h-auto rounded-lg object-cover">
+                </div>                
+                <h1 class="px-10 pt-3  md:items-start font-bold">Muhammad Daffa Erfiansyah</h1>
+                <h3 class="px-10 items-center md:items-start">Front-end Developer</h3>
+            </div>
+            <div class="mb-4 items-center justify-center text-center">
+                <div class="rounded-3xl shadow-xl p-5 overflow-hidden w-3/4 border border-slate-400 sm:text-center max-w-full mx-auto">
+                    <img src="./assets/AdrianProfil.png" alt="Deskripsi Gambar" class="w-full h-auto rounded-lg object-cover">
+                </div>                
+                <h1 class="px-10 pt-3  md:items-start font-bold">Adrian Yoga Chrisarianto</h1>
+                <h3 class="px-10 items-center md:items-start">Research</h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="sm:col-span-2">
+            <a href="" aria-label="Go home" title="Company" class="inline-flex items-center">
+              <span class="p-1 text-xl font-bold tracking-wide text-gray-800 uppercase">EcoBalance</span>
+            </a>
+            <div class=" mt-6 lg:max-w-sm">
+              <p class="text-sm text-gray-800">
+                Adalah website yang berfokus pada kepedulian lingkungan terhadap Emisi Karbon, mulai dari inovasi dan Edukasi. 
+              </p>
+            </div>
+          </div>
+          
+          
+        </div>
+        <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+          <p class="text-sm text-gray-600">
+            © Copyright 2024 EcoBalance. All rights reserved.
+          </p>
+          <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+            <li>
+              <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
+            </li>
+            <li>
+              <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Terms &amp; Conditions</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/3a3d825e01.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</body>
+</html>
