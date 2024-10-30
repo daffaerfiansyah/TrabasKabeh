@@ -1,0 +1,75 @@
+
+
+body {
+    overflow-x: hidden;
+}
+
+.featured-name {
+    margin-block: 20px;
+/* Mengatur semua elemen dengan border merah */
+* {
+    border: 2px; /* Mengatur ketebalan border */
+    border-style: outset; /* Mengatur gaya border */
+    border-color: red; /* Mengatur warna border */
+}
+
+/* Menambahkan efek transisi pada dropdown menu */
+.dropdown-menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: top; /* For smooth scale effect */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transisi untuk transformasi dan opasitas */
+}
+
+/* Kelas untuk menyembunyikan menu dropdown */
+.hidden-menu {
+    transform: scaleY(0);
+    opacity: 0;
+    display: none;
+  transform: scaleY(0); /* Mengurangi skala Y menjadi 0 */
+  opacity: 0; /* Mengatur opasitas menjadi 0 (tak terlihat) */
+}
+
+/* Kelas untuk menampilkan menu dropdown */
+.visible-menu {
+    transform: scaleY(1);
+    opacity: 1;
+    display: block;
+}
+
+
+  transform: scaleY(1); /* Mengatur skala Y menjadi 1 (normal) */
+  opacity: 1; /* Mengatur opasitas menjadi 1 (terlihat) */
+}
+
+/* Mengatur latar belakang bergelombang */
+.wave-bg {
+    position: relative; /* Mengatur posisi relatif */
+    z-index: 0; /* Mengatur z-index agar berada di belakang elemen lain */
+    background-color: white; /* Mengatur warna latar belakang */
+    border-radius: 2rem; /* Mengatur sudut melengkung */
+    overflow: hidden; /* Menyembunyikan bagian yang keluar dari elemen */
+}
+
+/* Efek gelombang latar belakang */
+.wave-bg::before {
+    content: ""; /* Mengatur konten kosong untuk pseudo-element */
+    position: absolute; /* Mengatur posisi absolut */
+    top: -50px; /* Mengatur posisi atas */
+    left: 50%; /* Mengatur posisi kiri di tengah */
+    width: 400%; /* Mengatur lebar 400% */
+    height: 400%; /* Mengatur tinggi 400% */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent); /* Mengatur gradient radial */
+    animation: wave 8s ease-in-out infinite; /* Menambahkan animasi gelombang */
+    z-index: -1; /* Mengatur z-index agar berada di belakang elemen lain */
+    transform: translateX(-50%); /* Menggeser elemen ke kiri 50% untuk penempatan yang tepat */
+}
+
+/* Animasi gelombang */
+@keyframes wave {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0); /* Posisi awal dan akhir */
+    }
+    50% {
+        transform: translateX(-50%) translateY(20px); /* Geser ke bawah saat animasi mencapai puncak */
+    }
+}
