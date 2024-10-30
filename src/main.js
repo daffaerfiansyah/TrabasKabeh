@@ -140,7 +140,6 @@ function fetchWeatherData() {
                     return response.json();
                 })
                 .then(data => {
-                    console.log(data); // Debugging
                     const locationElem = document.getElementById('location');
                     const temperatureElem = document.getElementById('temperature');
                     const coElem = document.getElementById('co');
@@ -149,9 +148,13 @@ function fetchWeatherData() {
                     const weatherDataDiv = document.getElementById('weather-data');
                     const loadingDiv = document.getElementById('loading');
 
+                    // Ambil nama kota dan tampilkan di input
                     cityInput.value = data.location.name;
-                    locationElem.textContent = `${data.location.name}, ${data.location.country}`;
+
+                    // Tampilkan lokasi lengkap
+                    locationElem.textContent = data.location.name + ', ' + data.location.country;
                     temperatureElem.textContent = data.current.temp_c;
+
                     coElem.textContent = data.current.air_quality.co.toFixed(2);
                     o3Elem.textContent = data.current.air_quality.o3.toFixed(2);
                     epaIndexElem.textContent = data.current.air_quality['us-epa-index'];
@@ -165,7 +168,20 @@ function fetchWeatherData() {
                 });
         }, error => {
             console.error('Geolocation error:', error);
-            alert("Terjadi kesalahan dalam mendapatkan lokasi.");
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Pengguna menolak izin untuk mengakses lokasi.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Posisi tidak tersedia.");
+                    break;
+                case error.TIMEOUT:
+                    alert("Permintaan untuk mendapatkan lokasi pengguna telah timeout.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Terjadi kesalahan yang tidak diketahui.");
+                    break;
+            }
         });
     } else {
         alert("Geolocation tidak didukung oleh browser Anda.");
