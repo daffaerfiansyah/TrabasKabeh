@@ -123,7 +123,7 @@ const toggleButton = document.getElementById("toggle-button");
 
 
 function fetchWeatherData() {
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY || 'API_KEY_FALLBACK';
+    const apiKey = "f8c320633d6543ccb8a161745242410";
     const cityInput = document.getElementById("cityInput").value; // Ambil input kota
 
     const loadingDiv = document.getElementById('loading');
