@@ -123,68 +123,51 @@ const toggleButton = document.getElementById("toggle-button");
 
 
 function fetchWeatherData() {
-    const apiKey = process.env.WEATHER_API_KEY;
-    const cityInput = document.getElementById("cityInput");
+    const apiKey = process.env.WEATHER_API_KEY; // Ambil API Key dari environment variables
+    const cityInput = document.getElementById("cityInput").value; // Ambil input kota
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=yes`;
+    const loadingDiv = document.getElementById('loading');
+    const weatherDataDiv = document.getElementById('weather-data');
 
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const locationElem = document.getElementById('location');
-                    const temperatureElem = document.getElementById('temperature');
-                    const coElem = document.getElementById('co');
-                    const o3Elem = document.getElementById('o3');
-                    const epaIndexElem = document.getElementById('epa-index');
-                    const weatherDataDiv = document.getElementById('weather-data');
-                    const loadingDiv = document.getElementById('loading');
+    loadingDiv.style.display = 'block'; // Tampilkan loading
+    weatherDataDiv.style.display = 'none'; // Sembunyikan data cuaca sebelumnya
 
-                    // Ambil nama kota dan tampilkan di input
-                    cityInput.value = data.location.name;
+    if (cityInput) {
+        const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityInput}&aqi=yes`;
 
-                    // Tampilkan lokasi lengkap
-                    locationElem.textContent = data.location.name + ', ' + data.location.country;
-                    temperatureElem.textContent = data.current.temp_c;
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data); // Debugging
+                const locationElem = document.getElementById('location');
+                const temperatureElem = document.getElementById('temperature');
+                const coElem = document.getElementById('co');
+                const o3Elem = document.getElementById('o3');
+                const epaIndexElem = document.getElementById('epa-index');
 
-                    coElem.textContent = data.current.air_quality.co.toFixed(2);
-                    o3Elem.textContent = data.current.air_quality.o3.toFixed(2);
-                    epaIndexElem.textContent = data.current.air_quality['us-epa-index'];
+                // Tampilkan lokasi lengkap
+                locationElem.textContent = `${data.location.name}, ${data.location.country}`;
+                temperatureElem.textContent = data.current.temp_c;
+                coElem.textContent = data.current.air_quality.co.toFixed(2);
+                o3Elem.textContent = data.current.air_quality.o3.toFixed(2);
+                epaIndexElem.textContent = data.current.air_quality['us-epa-index'];
 
-                    loadingDiv.style.display = 'none';
-                    weatherDataDiv.style.display = 'block';
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('loading').textContent = 'Failed to load weather and air quality data.';
-                });
-        }, error => {
-            console.error('Geolocation error:', error);
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    alert("Pengguna menolak izin untuk mengakses lokasi.");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Posisi tidak tersedia.");
-                    break;
-                case error.TIMEOUT:
-                    alert("Permintaan untuk mendapatkan lokasi pengguna telah timeout.");
-                    break;
-                case error.UNKNOWN_ERROR:
-                    alert("Terjadi kesalahan yang tidak diketahui.");
-                    break;
-            }
-        });
+                loadingDiv.style.display = 'none'; // Sembunyikan loading
+                weatherDataDiv.style.display = 'block'; // Tampilkan data cuaca
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('loading').textContent = 'Failed to load weather and air quality data.';
+                loadingDiv.style.display = 'none'; // Sembunyikan loading
+            });
     } else {
-        alert("Geolocation tidak didukung oleh browser Anda.");
+        alert("Silakan masukkan nama kota.");
+        loadingDiv.style.display = 'none'; // Sembunyikan loading jika tidak ada input
     }
 }
 
