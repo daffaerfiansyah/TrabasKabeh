@@ -123,7 +123,7 @@ const toggleButton = document.getElementById("toggle-button");
 
 
 function fetchWeatherData() {
-    const apiKey = process.env.WEATHER_API_KEY; // Ambil API Key dari environment variables
+    const apiKey = process.env.WEATHER_API_KEY; // Ganti dengan API key Anda
     const cityInput = document.getElementById("cityInput").value; // Ambil input kota
 
     const loadingDiv = document.getElementById('loading');
@@ -143,7 +143,6 @@ function fetchWeatherData() {
                 return response.json();
             })
             .then(data => {
-                console.log(data); // Debugging
                 const locationElem = document.getElementById('location');
                 const temperatureElem = document.getElementById('temperature');
                 const coElem = document.getElementById('co');
@@ -162,7 +161,7 @@ function fetchWeatherData() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('loading').textContent = 'Failed to load weather and air quality data.';
+                alert('Gagal memuat data cuaca. Silakan coba lagi.');
                 loadingDiv.style.display = 'none'; // Sembunyikan loading
             });
     } else {
@@ -170,6 +169,7 @@ function fetchWeatherData() {
         loadingDiv.style.display = 'none'; // Sembunyikan loading jika tidak ada input
     }
 }
+
 
         // Fetch weather data function
         // function fetchWeatherData() {
